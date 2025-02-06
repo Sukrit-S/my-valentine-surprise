@@ -1,0 +1,204 @@
+/* สไตล์พื้นฐาน */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe6e6;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* เคลื่อนไหวตัวอักษรใน body */
+h1 {
+    font-size: 2.5em;
+    color: #ff6699;
+    margin-top: 50px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    opacity: 0; /* ซ่อนข้อความตอนแรก */
+    animation: fadeInText 2s ease forwards; /* แอนิเมชั่น */
+}
+
+/* เพิ่มการเคลื่อนไหวให้ข้อความ */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* กำหนดช่วงเวลาในการแสดงข้อความ */
+#text1 {
+    animation-delay: 0s;
+}
+
+#text2 {
+    animation-delay: 1s;
+}
+
+#text3 {
+    animation-delay: 2s;
+}
+
+#text4 {
+    animation-delay: 3s;
+}
+
+#text5 {
+    animation-delay: 4s;
+}
+
+/* ป็อบอัพ */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+    z-index: 9999; /* ให้ป็อปอัพอยู่ด้านบน */
+}
+
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ปรับให้ปุ่มไม่แสดงตอนเริ่ม */
+button {
+    display: none;  /* ปุ่มจะไม่แสดงทันที */
+}
+
+/* ปุ่มที่จะแสดงหลังจาก 5 วินาที */
+button.show {
+    display: inline-block;
+    animation: fadeIn 1s ease forwards;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ให้อยู่กลางจอทั้งแนวนอนและแนวตั้ง */
+    font-size: 3em;  /* ขนาดตัวอักษรของปุ่ม */
+    padding: 20px 50px;
+    background-color: #FF69B4;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1; /* ให้ปุ่มอยู่ด้านล่างของป็อปอัพ */
+    opacity: 1; /* ให้ปุ่มปรากฏได้เต็มที่ */
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* กำหนด Animation สำหรับปุ่ม */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ปุ่มปิด */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em;
+    cursor: pointer;
+    color: #ff3366;
+    transition: color 0.3s;
+}
+
+/* เปลี่ยนสีปุ่มปิดเมื่อ hover */
+.close:hover {
+    color: #ff6699;
+}
+
+/* ปรับปุ่มที่แสดงในป็อบอัพ */
+button {
+    padding: 15px 40px;
+    background-color: #FF69B4;
+    color: white;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #ff3366;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Animation สำหรับการจางหายของปุ่ม */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* รูปหัวใจและดอกกุหลาบ */
+.heart-rose {
+    display: flex;
+    justify-content: space-between; /* จัดให้รูปหัวใจอยู่ทางซ้าย รูปกุหลาบอยู่ทางขวา */
+    align-items: center;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.heart-image {
+    width: 400px;
+    height: 400px;
+    animation: bounce 1s infinite alternate;
+}
+
+.rose-image {
+    width: 400px;
+    height: 400px;
+    animation: bounce 1s infinite alternate-reverse;
+}
+
+/* Animation สำหรับการกระโดดของรูป */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Animation สำหรับแสดงปุ่ม */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
