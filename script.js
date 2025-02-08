@@ -40,7 +40,7 @@ yesBtn.addEventListener("click", function() {
     popup.style.display = "none";// ปิดป๊อปอัพ
     document.getElementById("heartAndRose").style.display = "flex"; // แสดงรูปหัวใจและกุหลาบ
     setTimeout(function() {
-        window.location.href = "https://www.youtube.com/watch?v=EUFrU1TuyAg&pp=ygUh4LiU4Li14LmD4LiI4Lij4Li24LmA4Lib4Lil4LmI4Liy"; // เปลี่ยนไปยังลิงก์ YouTube
+        window.location.href = "https://www.youtube.com/watch?v=37vuU29ccWk"; // เปลี่ยนไปยังลิงก์ YouTube
     }, 5000); // 2 วินาทีหลังจากแสดงดอกกุหลาบ
     setTimeout(function() {
         window.close(); // ปิดเว็บหลังจาก 4 วินาที
